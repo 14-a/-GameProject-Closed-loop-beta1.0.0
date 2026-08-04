@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://c27p6nx1uqsdd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ita4j"]
+albedo_color = Color(1, 0.81666666, 0, 1)
+
+[node name="门禁卡" type="Node3D" unique_id=735585144]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=822376944]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.097462356, -0.004119754, 0)
+size = Vector3(0.47460938, 0.08544922, 1)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=1545839219]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21612549, 0.0053100586, 0)
+material_override = SubResource("StandardMaterial3D_ita4j")
+size = Vector3(0.2088623, 0.060668945, 1)

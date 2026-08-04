@@ -1,0 +1,112 @@
+[gd_scene format=3 uid="uid://dagx27bwmu78y"]
+
+[ext_resource type="PackedScene" uid="uid://ccqlvicfg44ji" path="res://scene/Player/player.tscn" id="1_moolj"]
+[ext_resource type="PackedScene" uid="uid://cwn2o2bsto5fe" path="res://scene/World/LevelData/level.tscn" id="2_l7e2a"]
+[ext_resource type="PackedScene" uid="uid://c27p6nx1uqsdd" path="res://scene/World/Model/门禁卡.tscn" id="3_7jau4"]
+[ext_resource type="Shader" uid="uid://74rkpbx4vock" path="res://scene/World/LevelData/levelTexture.gdshader" id="3_vt5ns"]
+[ext_resource type="VoxelGIData" uid="uid://dtfn5jhujbd4k" path="res://scene/World/world.VoxelGI_data.res" id="4_2ec54"]
+[ext_resource type="Texture2D" uid="uid://ccve1pu4mdctl" path="res://Texture/PNG/Light/texture_10.png" id="4_dnym3"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5clne"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_moolj"]
+sky_material = SubResource("ProceduralSkyMaterial_5clne")
+
+[sub_resource type="Environment" id="Environment_l7e2a"]
+background_mode = 1
+sky = SubResource("Sky_moolj")
+tonemap_mode = 2
+ssr_enabled = true
+ssao_enabled = true
+ssao_radius = 0.52
+ssao_intensity = 2.48
+ssao_power = 0.5490318
+ssao_detail = 0.0
+ssao_sharpness = 1.0
+ssil_enabled = true
+sdfgi_enabled = true
+sdfgi_cascades = 8
+sdfgi_min_cell_size = 0.1
+glow_enabled = true
+volumetric_fog_density = 0.01
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ita4j"]
+size = Vector3(2.612915, 4.55072, 1.0977783)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ita4j"]
+size = Vector3(2.2903442, 3.3374634, 0.33013916)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_260ng"]
+render_priority = 0
+shader = ExtResource("3_vt5ns")
+shader_parameter/Text = ExtResource("4_dnym3")
+shader_parameter/scale = 0.245
+shader_parameter/offect = Vector2(0.505, 0.6)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_2ec54"]
+data = PackedVector3Array(-1.1452, 1.6687, 0.1651, 1.1452, 1.6687, 0.1651, -1.1452, -1.6687, 0.1651, 1.1452, 1.6687, 0.1651, 1.1452, -1.6687, 0.1651, -1.1452, -1.6687, 0.1651, 1.1452, 1.6687, -0.1651, -1.1452, 1.6687, -0.1651, 1.1452, -1.6687, -0.1651, -1.1452, 1.6687, -0.1651, -1.1452, -1.6687, -0.1651, 1.1452, -1.6687, -0.1651, 1.1452, 1.6687, 0.1651, 1.1452, 1.6687, -0.1651, 1.1452, -1.6687, 0.1651, 1.1452, 1.6687, -0.1651, 1.1452, -1.6687, -0.1651, 1.1452, -1.6687, 0.1651, -1.1452, 1.6687, -0.1651, -1.1452, 1.6687, 0.1651, -1.1452, -1.6687, -0.1651, -1.1452, 1.6687, 0.1651, -1.1452, -1.6687, 0.1651, -1.1452, -1.6687, -0.1651, 1.1452, 1.6687, 0.1651, -1.1452, 1.6687, 0.1651, 1.1452, 1.6687, -0.1651, -1.1452, 1.6687, 0.1651, -1.1452, 1.6687, -0.1651, 1.1452, 1.6687, -0.1651, -1.1452, -1.6687, 0.1651, 1.1452, -1.6687, 0.1651, -1.1452, -1.6687, -0.1651, 1.1452, -1.6687, 0.1651, 1.1452, -1.6687, -0.1651, -1.1452, -1.6687, -0.1651)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2ec54"]
+size = Vector3(1, 0.5957031, 1)
+
+[node name="World" type="Node" unique_id=1087531313]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=552964575]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+visible = false
+shadow_enabled = true
+shadow_reverse_cull_face = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1100117812]
+environment = SubResource("Environment_l7e2a")
+
+[node name="Player" parent="." unique_id=1765428193 instance=ExtResource("1_moolj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06682277, 0, 0.3468747)
+
+[node name="Level" parent="." unique_id=1239849709 instance=ExtResource("2_l7e2a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9390671, 0, -0.51362)
+
+[node name="PlayerEvents" type="Node3D" parent="Level" unique_id=859555066]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9390671, 0, 0.51362)
+
+[node name="Door" type="StaticBody3D" parent="Level/PlayerEvents" unique_id=1435219182]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6710253, 1.0829389, 3.643944)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/PlayerEvents/Door" unique_id=500102748]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1506958, -0.6807556, 0.5972378)
+shape = SubResource("BoxShape3D_ita4j")
+debug_color = Color(0, 0.5950001, 0.7, 1)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Level/PlayerEvents" unique_id=557359340]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8791485, 1.0315857, -3.99759)
+mesh = SubResource("BoxMesh_ita4j")
+surface_material_override/0 = SubResource("ShaderMaterial_260ng")
+
+[node name="NextRoom" type="StaticBody3D" parent="Level/PlayerEvents/MeshInstance3D" unique_id=84918084]
+visible = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/PlayerEvents/MeshInstance3D/NextRoom" unique_id=992173851]
+shape = SubResource("ConcavePolygonShape3D_2ec54")
+
+[node name="LeveObject" type="Node3D" parent="Level" unique_id=1012028502]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1215901, 0, 0.36810482)
+
+[node name="门禁卡" parent="Level/LeveObject" unique_id=735585144 instance=ExtResource("3_7jau4")]
+transform = Transform3D(0.14413346, 0, 0.13865621, 0, 0.2, 0, -0.13865621, 0, 0.14413346, 1.7962873, 0.5231415, 0.35164404)
+
+[node name="门禁卡" type="StaticBody3D" parent="Level/LeveObject/门禁卡" unique_id=1548418794]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/LeveObject/门禁卡/门禁卡" unique_id=225637101]
+transform = Transform3D(0.9999999, 0, -2.9802322e-08, 0, 0.9999956, 0, 2.9802322e-08, 0, 0.9999999, 0, -0.2021482, 0)
+shape = SubResource("BoxShape3D_2ec54")
+
+[node name="VoxelGI" type="VoxelGI" parent="." unique_id=38691894]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.072884, 2.0366821, -6.7859497)
+visible = false
+subdiv = 3
+size = Vector3(75.66713, 7.324341, 23.922485)
+data = ExtResource("4_2ec54")
+
+[connection signal="Event" from="Player" to="Level" method="_on_player_event"]
