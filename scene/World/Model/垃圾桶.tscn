@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://cq2jobt8of3i7"]
+
+[ext_resource type="Shader" uid="uid://74rkpbx4vock" path="res://scene/World/LevelData/levelTexture.gdshader" id="1_fqkdf"]
+[ext_resource type="Texture2D" uid="uid://dhrd0defeeapp" path="res://Texture/PNG/Orange/texture_10.png" id="2_fqkdf"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t5dqv"]
+render_priority = 0
+shader = ExtResource("1_fqkdf")
+shader_parameter/Text = ExtResource("2_fqkdf")
+shader_parameter/scale = 1.0
+shader_parameter/offect = Vector2(0, 0)
+
+[node name="垃圾桶" type="Node3D" unique_id=1268233226]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1361395218]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.043259025, -0.05267334, -0.06200528)
+material_override = SubResource("ShaderMaterial_t5dqv")
+autosmooth = true
+size = Vector3(0.7840576, 0.8946533, 0.4711914)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D" unique_id=987160028]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0062561035, 0.07397461, 0.00075149536)
+operation = 2
+size = Vector3(0.7197876, 0.8520508, 0.3817215)

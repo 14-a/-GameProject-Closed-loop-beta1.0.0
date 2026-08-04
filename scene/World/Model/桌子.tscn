@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://brwj13rnjre1y"]
+
+[ext_resource type="Shader" uid="uid://74rkpbx4vock" path="res://scene/World/LevelData/levelTexture.gdshader" id="1_moeud"]
+[ext_resource type="Texture2D" uid="uid://dhrd0defeeapp" path="res://Texture/PNG/Orange/texture_10.png" id="2_moeud"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k4fdr"]
+render_priority = 0
+shader = ExtResource("1_moeud")
+shader_parameter/Text = ExtResource("2_moeud")
+shader_parameter/scale = 1.38
+shader_parameter/offect = Vector2(0, 0)
+
+[node name="桌子" type="Node3D" unique_id=316623049]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=450524003]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.46585083, 0.005404651)
+material_override = SubResource("ShaderMaterial_k4fdr")
+use_collision = true
+size = Vector3(1, 0.06829834, 0.75268555)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="." unique_id=649483121]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.410298, 0.23596191, 0.30885255)
+material_override = SubResource("ShaderMaterial_k4fdr")
+use_collision = true
+radius = 0.041992188
+height = 0.52368164
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="." unique_id=1276990930]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.39362657, 0.23596191, 0.30885255)
+material_override = SubResource("ShaderMaterial_k4fdr")
+use_collision = true
+radius = 0.041992188
+height = 0.52368164
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="." unique_id=1405424436]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.410298, 0.23596191, -0.21840417)
+material_override = SubResource("ShaderMaterial_k4fdr")
+use_collision = true
+radius = 0.041992188
+height = 0.52368164
+
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="." unique_id=466969081]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.39362657, 0.23596191, -0.21840417)
+material_override = SubResource("ShaderMaterial_k4fdr")
+use_collision = true
+radius = 0.041992188
+height = 0.52368164

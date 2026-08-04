@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Events" format=3 uid="uid://b1ubp21jf7sf4"]
+
+[ext_resource type="Script" uid="uid://d2bb0eijqw3ua" path="res://scene/World/Event.gd" id="1_e33fq"]
+
+[resource]
+script = ExtResource("1_e33fq")
+EventList = Array[String](["TryToOpenDoor", "HandInDoorCake", "OpenDoor", ""])
+TaskList = Array[String](["门禁卡", "0", ""])
+TextList = Array[String](["不行，完全不行"])
